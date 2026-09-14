@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPG to EPS Converter — Free Online Vector Tool | VectorForge</title>
+<meta name="description" content="Free JPG to EPS converter. Convert JPG images to SVG and EPS, generate a JPG preview, validate your EPS and download a ready-to-use ZIP package in your browser.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://vectorforge-umber.vercel.app/jpg-to-eps/">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080b16;--panel:#101526;--panel2:#151b30;--text:#f6f7fb;
+  --muted:#9da7bd;--line:rgba(255,255,255,.09);--blue:#5b7cff;
+  --purple:#9b6cff;--cyan:#4fd8ff;
+}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:radial-gradient(circle at 50% -10%,rgba(91,124,255,.22),transparent 34%),var(--bg);
+  color:var(--text);line-height:1.5;overflow-x:hidden
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;letter-spacing:-.5px}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--purple));display:grid;place-items:center;box-shadow:0 8px 28px rgba(91,124,255,.3)}
+.logo-mark:after{content:"V";font-weight:900;color:white}
+.navlinks{display:flex;gap:28px;color:#b9c1d5;font-size:14px}
+.navlinks a:hover{color:white}
+.navbtn{padding:10px 16px;border:1px solid var(--line);border-radius:10px;color:#dfe5f4;font-size:14px}
+.hero{text-align:center;padding:78px 0 60px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid rgba(91,124,255,.28);background:rgba(91,124,255,.08);border-radius:999px;color:#b9c8ff;font-size:13px;margin-bottom:22px}
+.dot{width:7px;height:7px;border-radius:50%;background:#61e294;box-shadow:0 0 12px #61e294}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.02;letter-spacing:-4px;max-width:900px;margin:auto}
+.gradient{background:linear-gradient(90deg,#fff 15%,#91a8ff 55%,#c59cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:680px;margin:24px auto;color:var(--muted);font-size:18px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:14px;padding:15px 24px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--purple));font-weight:750;box-shadow:0 14px 40px rgba(91,124,255,.28);transition:.2s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 18px 48px rgba(91,124,255,.38)}
+.trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:22px;color:#7f8aa3;font-size:13px}
+.trust span:before{content:"✓";color:#65d88b;margin-right:7px}
+.demo{margin:35px auto 0;padding:10px;border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:22px;box-shadow:0 30px 100px rgba(0,0,0,.35)}
+.demo-inner{min-height:370px;border-radius:15px;background:linear-gradient(145deg,#11182b,#0c1120);display:grid;place-items:center;border:1px solid rgba(255,255,255,.05);position:relative;overflow:hidden}
+.demo-inner:before{content:"";position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(91,124,255,.16),transparent 65%);top:-250px;left:50%;transform:translateX(-50%)}
+.upload-box{position:relative;width:min(620px,85%);padding:48px 30px;border:1px dashed rgba(151,166,255,.35);border-radius:18px;background:rgba(255,255,255,.025)}
+.upload-icon{width:58px;height:58px;border-radius:16px;background:rgba(91,124,255,.13);display:grid;place-items:center;margin:0 auto 16px;font-size:25px}
+.upload-box h3{font-size:20px;margin-bottom:7px}.upload-box p{color:#8792aa;font-size:14px}
+section{padding:88px 0}
+.section-head{text-align:center;max-width:650px;margin:0 auto 42px}
+.eyebrow{color:#8da2ff;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:1.8px;margin-bottom:10px}
+h2{font-size:clamp(30px,4vw,44px);letter-spacing:-1.8px;margin-bottom:12px}
+.section-head p{color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.card{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:18px;padding:25px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(115,137,255,.3)}
+.num{width:34px;height:34px;border-radius:10px;background:#1b2340;color:#9eb0ff;display:grid;place-items:center;font-weight:800;margin-bottom:20px}
+.card h3{font-size:17px;margin-bottom:8px}.card p{font-size:14px;color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.feature-icon{font-size:23px;margin-bottom:15px}
+.pro{position:relative;overflow:hidden;border:1px solid rgba(145,113,255,.3);background:linear-gradient(145deg,rgba(98,76,190,.16),rgba(255,255,255,.025))}
+.pro:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(155,108,255,.12);right:-100px;top:-100px}
+.pro-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pro ul{list-style:none;margin-top:18px;color:#b8c1d6;font-size:14px}
+.pro li{margin:10px 0}.pro li:before{content:"✓";color:#9f83ff;margin-right:9px}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.tool{padding:22px;border:1px solid var(--line);border-radius:15px;background:#0d1221}
+.tool small{color:#78849e}.tool strong{display:block;margin:7px 0}
+.faq{max-width:760px;margin:auto}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:650}.answer{color:var(--muted);padding-top:10px;font-size:14px}
+footer{border-top:1px solid var(--line);padding:35px 0;color:#78849d;font-size:13px}
+.footer-flex{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:800px){
+ .navlinks{display:none}.hero{padding-top:55px}h1{letter-spacing:-2.5px}
+ .steps,.features,.tools,.pro-grid{grid-template-columns:1fr}
+ .demo-inner{min-height:300px}.upload-box{padding:35px 20px}
+ section{padding:65px 0}
+}
+
+.tool-shell{display:block!important;min-height:0!important;padding:0;background:transparent!important}
+.vf-tool-card{width:100%;padding:22px;background:linear-gradient(145deg,#10182b,#0b1120);border:1px solid rgba(255,255,255,.06);border-radius:16px;text-align:left}
+.vf-upload{display:block;text-align:center;padding:42px 22px;border:1.5px dashed rgba(151,166,255,.38);border-radius:16px;background:rgba(255,255,255,.025);cursor:pointer;transition:.2s}
+.vf-upload:hover,.vf-upload:focus{border-color:#6d8cff;background:rgba(91,124,255,.06);outline:none}
+.vf-upload-icon{width:58px;height:58px;border-radius:16px;background:rgba(91,124,255,.13);display:grid;place-items:center;margin:0 auto 14px;font-size:26px}
+.vf-upload h3{font-size:19px;margin-bottom:6px}.vf-upload p{color:#8792aa;font-size:13px}
+.vf-choose{margin-top:17px;border:0;cursor:pointer;font:inherit;color:white}
+.vf-status{text-align:center;color:#9eb0ff;font-size:13px;font-weight:700;padding:15px 0 4px;min-height:38px}
+.vf-error{margin-top:8px;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,100,124,.35);background:rgba(255,100,124,.08);color:#ffb1bd;font-size:13px;line-height:1.5}
+.vf-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.vf-preview{border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:12px;background:#080e1a}.vf-preview h4{font-size:11px;letter-spacing:.8px;color:#aab6cf;margin:0 0 9px}
+.vf-canvas{height:310px;border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden;background-color:#101827;background-image:linear-gradient(45deg,#182235 25%,transparent 25%),linear-gradient(-45deg,#182235 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#182235 75%),linear-gradient(-45deg,transparent 75%,#182235 75%);background-size:24px 24px;background-position:0 0,0 12px,12px -12px,-12px 0}
+.vf-canvas img,.vf-canvas svg{max-width:94%;max-height:94%;object-fit:contain}.vf-empty{color:#586984;font-size:12px;text-align:center}
+.vf-validator{margin-top:14px;padding:15px;border-radius:12px;border:1px solid rgba(39,214,155,.28);background:rgba(39,214,155,.05)}
+.vf-validator.bad{border-color:rgba(255,100,124,.35);background:rgba(255,100,124,.05)}.vf-validator-title{font-weight:800;color:#6de8bc}.vf-validator.bad .vf-validator-title{color:#ff98a8}
+.vf-checks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.vf-checks>div{padding:8px 9px;border-radius:8px;background:#0b1727;color:#8fa1b8;font-size:11px}.vf-checks b{display:block;color:#eaf2ff;font-size:12px;margin-top:2px}
+.vf-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:15px}.vf-btn{border:0;border-radius:9px;padding:10px 13px;background:#1a3552;color:white;font-weight:700;font-size:12px;cursor:pointer}.vf-btn:hover{filter:brightness(1.14);transform:translateY(-1px)}.vf-primary{background:linear-gradient(135deg,#4b8cff,#765cf4)}.vf-view{background:linear-gradient(135deg,#714df4,#a45df5)}.vf-package{background:linear-gradient(135deg,#17ad7d,#159c6e)}
+.vf-note{text-align:center;color:#687993;font-size:10px;margin-top:12px;line-height:1.5}
+.vf-modal{position:fixed;inset:0;background:rgba(2,5,12,.86);backdrop-filter:blur(8px);z-index:99999;display:none;align-items:center;justify-content:center;padding:20px}.vf-modal.open{display:flex}.vf-modal-card{width:min(1000px,96vw);height:min(760px,92vh);background:#0d1423;border:1px solid rgba(255,255,255,.12);border-radius:18px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 100px rgba(0,0,0,.55)}.vf-modal-head{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.08)}.vf-modal-head strong{font-size:14px}.vf-modal-tools{display:flex;gap:7px}.vf-modal-tools button{border:1px solid rgba(255,255,255,.1);background:#172238;color:#dce5f5;border-radius:8px;padding:7px 10px;cursor:pointer}.vf-modal-body{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;background:#090f1b;background-image:linear-gradient(45deg,#101a2a 25%,transparent 25%),linear-gradient(-45deg,#101a2a 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#101a2a 75%),linear-gradient(-45deg,transparent 75%,#101a2a 75%);background-size:28px 28px;background-position:0 0,0 14px,14px -14px,-14px 0;padding:30px}.vf-modal-body svg{max-width:100%;max-height:100%;transform-origin:center;transition:transform .15s}.vf-modal-foot{padding:9px 15px;border-top:1px solid rgba(255,255,255,.08);color:#7e8ba2;font-size:11px;text-align:center}
+@media(max-width:700px){.vf-grid,.vf-checks{grid-template-columns:1fr}.vf-canvas{height:250px}.vf-tool-card{padding:14px}.vf-upload{padding:32px 14px}}
+</style>
+</head>
+<body>
+
+<div class="container">
+<nav>
+  <a class="logo" href="#"><span class="logo-mark"></span>VectorForge</a>
+  <div class="navlinks"><a href="#how">How it works</a><a href="#features">Features</a><a href="#pro">Pro</a><a href="#faq">FAQ</a></div>
+  <a class="navbtn" href="#tool">Open Tool</a>
+</nav>
+
+<header class="hero">
+  <div class="badge"><span class="dot"></span> Free browser-based vector workflow</div>
+  <h1>Free <span class="gradient">JPG to EPS Converter.</span></h1>
+  <p>Convert JPG images into SVG and EPS files, generate a high-resolution JPG preview, validate your package, and download everything together — directly in your browser.</p>
+  <a class="cta" href="#tool">Start Converting Free <span>→</span></a>
+  <div class="trust"><span>No Signup</span><span>No Watermark</span><span>Browser-Based</span><span>Fast Processing</span></div>
+
+  <div class="demo" id="tool">
+  <div class="demo-inner tool-shell">
+    <section class="vf-tool-card">
+      <div class="vf-upload" id="uploadZone" role="button" tabindex="0">
+        <div class="vf-upload-icon">↥</div>
+        <h3>Drop your JPG or PNG here</h3>
+        <p>or click anywhere in this box to choose an image</p>
+        <button class="cta vf-choose" id="chooseBtn" type="button">Choose Image</button>
+        <input id="fileInput" type="file" accept="image/png,image/jpeg" hidden>
+      </div>
+      <div id="status" class="vf-status">Ready for your first image.</div>
+      <div id="errorBox" class="vf-error" hidden></div>
+      <div class="vf-grid">
+        <div class="vf-preview"><h4>ORIGINAL IMAGE</h4><div class="vf-canvas"><img id="imgPreview" alt="Original image"><div id="emptyOriginal" class="vf-empty">Your image will appear here.</div></div></div>
+        <div class="vf-preview"><h4>SVG / EPS VISUAL PREVIEW</h4><div id="svgCanvas" class="vf-canvas"><div class="vf-empty">Your vector preview will appear here.</div></div></div>
+      </div>
+      <div id="validator" class="vf-validator" hidden>
+        <div id="validatorTitle" class="vf-validator-title"></div>
+        <div class="vf-checks">
+          <div>EPS size <b id="epsSize">—</b></div><div>JPG preview <b id="jpgSize">—</b></div>
+          <div>Matching names <b id="fileNames">—</b></div><div>EPS paths <b id="pathCount">—</b></div>
+          <div>Invalid numbers <b id="invalidCount">—</b></div><div>Preview <b>4000 × 4000</b></div>
+        </div>
+      </div>
+      <div id="actions" class="vf-actions" hidden>
+        <button class="vf-btn vf-primary" id="dlSvg">↓ SVG</button>
+        <button class="vf-btn" id="dlEps">↓ EPS</button>
+        <button class="vf-btn" id="dlJpg">↓ JPG Preview</button>
+        <button class="vf-btn vf-view" id="viewEps">⌕ View EPS</button>
+        <button class="vf-btn vf-package" id="dlZip">▣ ZIP Package</button>
+      </div>
+      <div class="vf-note">Processing is done in your browser. “Ready” means technical checks passed; it does not guarantee stock-platform approval.</div>
+    </section>
+  </div>
+</div>
+</header>
+
+<section id="how">
+  <div class="section-head">
+    <div class="eyebrow">Simple workflow</div>
+    <h2>From image to upload package in minutes.</h2>
+    <p>Everything is organized into one clean workflow instead of jumping between different tools.</p>
+  </div>
+  <div class="steps">
+    <div class="card"><div class="num">01</div><h3>Upload</h3><p>Choose your JPG or PNG artwork and start the conversion directly in your browser.</p></div>
+    <div class="card"><div class="num">02</div><h3>Vectorize</h3><p>Create an editable SVG and EPS version from your source image.</p></div>
+    <div class="card"><div class="num">03</div><h3>Validate</h3><p>Check file size, path data, preview generation, naming and technical issues.</p></div>
+    <div class="card"><div class="num">04</div><h3>Package</h3><p>Download your SVG, EPS, JPG preview and ZIP package together.</p></div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="section-head">
+    <div class="eyebrow">Built for creators</div>
+    <h2>Less manual work. More time creating.</h2>
+    <p>A focused toolkit for designers, contributors and creators who need a repeatable vector workflow.</p>
+  </div>
+  <div class="features">
+    <div class="card"><div class="feature-icon">⚡</div><h3>Fast Browser Processing</h3><p>Core processing happens locally in the browser, keeping the workflow simple and lightweight.</p></div>
+    <div class="card"><div class="feature-icon">◈</div><h3>SVG + EPS Output</h3><p>Generate both modern SVG output and an EPS package for stock-platform workflows.</p></div>
+    <div class="card"><div class="feature-icon">✓</div><h3>Technical Validator</h3><p>Catch invalid numbers, missing files and basic package problems before submission.</p></div>
+    <div class="card"><div class="feature-icon">▣</div><h3>JPG Preview</h3><p>Create a large preview image with the same base filename as your vector files.</p></div>
+    <div class="card"><div class="feature-icon">⌘</div><h3>ZIP Packaging</h3><p>Keep the final files together in one convenient downloadable package.</p></div>
+    <div class="card"><div class="feature-icon">∞</div><h3>Made to Grow</h3><p>Future tools can plug into the same workspace without rebuilding the whole experience.</p></div>
+  </div>
+</section>
+
+<section id="pro">
+  <div class="section-head">
+    <div class="eyebrow">Coming soon</div>
+    <h2>A bigger toolkit for serious contributors.</h2>
+    <p>The free converter stays useful. Advanced workflow features can become the future Pro layer.</p>
+  </div>
+  <div class="pro-grid">
+    <div class="card pro">
+      <h3>VectorForge Pro</h3>
+      <p style="color:#9da7bd;margin-top:8px">Advanced controls for creators who process lots of assets.</p>
+      <ul>
+        <li>Batch image → SVG/EPS conversion</li>
+        <li>Advanced smoothing & detail controls</li>
+        <li>Background removal workflow</li>
+        <li>Metadata, title & keyword helper</li>
+        <li>Bulk ZIP package generation</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Stock Platform Presets</h3>
+      <p style="color:#9da7bd;margin-top:8px">A future guided workflow for multiple stock platforms.</p>
+      <ul style="list-style:none;margin-top:18px;color:#b8c1d6;font-size:14px">
+        <li>✓ Freepik submission checklist</li>
+        <li>✓ Adobe Stock preparation</li>
+        <li>✓ Shutterstock preparation</li>
+        <li>✓ Vecteezy preparation</li>
+        <li>✓ File naming & package checks</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="eyebrow">Free tools</div>
+    <h2>Explore the VectorForge toolkit.</h2>
+    <p>Each tool can become its own SEO-friendly landing page and entry point.</p>
+  </div>
+  <div class="tools">
+    <a class="tool" href="#"><small>IMAGE → EPS</small><strong>JPG to EPS Converter</strong><span style="color:#7e8ba5;font-size:13px">Convert raster artwork to EPS.</span></a>
+    <a class="tool" href="#"><small>IMAGE → SVG</small><strong>Image to SVG Converter</strong><span style="color:#7e8ba5;font-size:13px">Create scalable SVG graphics.</span></a>
+    <a class="tool" href="#"><small>STOCK WORKFLOW</small><strong>Freepik EPS Checker</strong><span style="color:#7e8ba5;font-size:13px">Check common technical requirements.</span></a>
+    <a class="tool" href="#"><small>PREVIEW</small><strong>JPG Preview Generator</strong><span style="color:#7e8ba5;font-size:13px">Generate a matching preview image.</span></a>
+    <a class="tool" href="#"><small>PACKAGE</small><strong>Vector ZIP Maker</strong><span style="color:#7e8ba5;font-size:13px">Package files together in one ZIP.</span></a>
+    <a class="tool" href="#"><small>VALIDATION</small><strong>EPS File Validator</strong><span style="color:#7e8ba5;font-size:13px">Inspect basic EPS technical health.</span></a>
+  </div>
+</section>
+
+
+<section id="about-jpg-to-eps">
+  <div class="section-head">
+    <div class="eyebrow">JPG → EPS</div>
+    <h2>Convert JPG to EPS Online for Free</h2>
+    <p>VectorForge gives creators a simple browser-based workflow for turning JPG artwork into SVG, EPS and a matching JPG preview.</p>
+  </div>
+  <div class="features">
+    <div class="card">
+      <h3>How to convert JPG to EPS</h3>
+      <p>Upload your JPG image above. VectorForge creates the SVG vector, converts the artwork to EPS, generates a JPG preview and runs basic technical checks before download.</p>
+    </div>
+    <div class="card">
+      <h3>JPG to EPS for stock workflows</h3>
+      <p>If you prepare artwork for stock platforms, keeping the EPS, preview image and filenames organized can make submission preparation easier. Always check the destination platform's current requirements before uploading.</p>
+    </div>
+    <div class="card">
+      <h3>Why use VectorForge?</h3>
+      <p>No account is required for the core workflow. Processing is designed to happen in your browser, and the tool gives you the main output files in one place.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="section-head">
+    <div class="eyebrow">FAQ</div><h2>Questions, answered.</h2>
+  </div>
+  <div class="faq">
+    <details><summary>Do I need to create an account?</summary><div class="answer">No. The core workflow is designed to work without signup.</div></details>
+    <details><summary>Are my images uploaded to a server?</summary><div class="answer">The planned core workflow processes images in the browser, so there is no need for a normal upload-storage pipeline.</div></details>
+    <details><summary>Does the validator guarantee stock-platform approval?</summary><div class="answer">No. It checks technical conditions only. Final acceptance depends on the platform's current requirements and review.</div></details>
+    <details><summary>Will advanced features require payment?</summary><div class="answer">The core tool is intended to remain free. Advanced features can be offered later as an optional Pro layer.</div></details>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-flex">
+    <div>© 2026 VectorForge. Free tools for creators.</div>
+    <div>No Signup · No Watermark · Browser-Based</div>
+  </div>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/imagetracerjs@1.2.6/imagetracer_v1.2.6.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+const fileInput=document.getElementById('fileInput'), uploadZone=document.getElementById('uploadZone'), chooseBtn=document.getElementById('chooseBtn');
+const imgPreview=document.getElementById('imgPreview'), emptyOriginal=document.getElementById('emptyOriginal'), svgCanvas=document.getElementById('svgCanvas');
+const statusText=document.getElementById('status'), errorBox=document.getElementById('errorBox'), validator=document.getElementById('validator'), validatorTitle=document.getElementById('validatorTitle'), actions=document.getElementById('actions');
+let currentSvgStr='',currentEpsStr='',currentJpgBlob=null,baseFileName='vector-design';
+function showError(msg){errorBox.textContent='⚠ '+msg;errorBox.hidden=false;statusText.textContent='Upload could not be processed.';}
+function clearError(){errorBox.hidden=true;errorBox.textContent='';}
+function openPicker(e){if(e && (e.target===chooseBtn || e.target===fileInput))return;fileInput.click();}
+chooseBtn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();fileInput.click()});
+uploadZone.addEventListener('click',openPicker);uploadZone.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fileInput.click()}});
+uploadZone.addEventListener('dragover',e=>{e.preventDefault();uploadZone.style.borderColor='#6d8cff'});uploadZone.addEventListener('dragleave',()=>uploadZone.style.borderColor='');uploadZone.addEventListener('drop',e=>{e.preventDefault();uploadZone.style.borderColor='';if(e.dataTransfer.files?.[0]){fileInput.files=e.dataTransfer.files;fileInput.dispatchEvent(new Event('change',{bubbles:true}))}});
+fileInput.addEventListener('change',e=>{
+ clearError(); const file=e.target.files && e.target.files[0]; if(!file)return;
+ if(!/^image\/(png|jpeg)$/.test(file.type)){showError('Please choose a JPG or PNG image.');return;}
+ baseFileName=file.name.replace(/\.[^/.]+$/,'').replace(/[^a-zA-Z0-9_-]/g,'-').toLowerCase()||'vector-design';
+ const reader=new FileReader(); reader.onerror=()=>showError('The browser could not read this image file. Try another JPG/PNG.');
+ reader.onload=event=>{
+  imgPreview.src=event.target.result; imgPreview.style.display='block'; emptyOriginal.style.display='none'; validator.hidden=true; actions.hidden=true;
+  svgCanvas.innerHTML='<div class="vf-empty">Vectorizing image…</div>'; statusText.textContent='Preparing vector engine…';
+  if(typeof ImageTracer==='undefined'){showError('The vector engine did not load. Please refresh the page and make sure your internet connection is active.');return;}
+  setTimeout(()=>{
+   try{
+    ImageTracer.imageToSVG(event.target.result,svg=>{
+      try{
+       currentSvgStr=svg; svgCanvas.innerHTML=svg; currentEpsStr=convertSvgToEps(svg);
+       const epsMB=(new Blob([currentEpsStr]).size/1048576).toFixed(2), invalid=(currentEpsStr.match(/\b(?:NaN|Infinity|-Infinity)\b/g)||[]).length, pathCount=(currentEpsStr.match(/\bnewpath\b/g)||[]).length;
+       document.getElementById('epsSize').textContent=epsMB+' MB'; document.getElementById('invalidCount').textContent=String(invalid); document.getElementById('pathCount').textContent=String(pathCount);
+       statusText.textContent='Generating 4000 × 4000 JPG preview…';
+       generateJpgPreview(svg,jpgBlob=>{
+        if(!jpgBlob){showError('JPG preview could not be generated.');return;} currentJpgBlob=jpgBlob;
+        document.getElementById('jpgSize').textContent=(jpgBlob.size/1048576).toFixed(2)+' MB'; document.getElementById('fileNames').textContent=baseFileName+'.eps = '+baseFileName+'.jpg';
+        const sizeBytes=new Blob([currentEpsStr]).size,sizeOk=sizeBytes>=524288&&sizeBytes<=83886080,valid=invalid===0&&pathCount>0&&sizeOk;
+        validator.className='vf-validator '+(valid?'good':'bad'); validatorTitle.textContent=valid?'✓ Technical checks passed':'⚠ EPS needs another fix before upload'; validator.hidden=false; actions.hidden=false;
+        statusText.textContent=valid?'✓ Files generated successfully.':'⚠ Files generated, but EPS checks need attention.';
+       });
+      }catch(err){console.error(err);showError('Vector conversion failed: '+(err.message||err));}
+    },{ltres:1,qtres:1,pathomit:8,rightangleenhance:true,numberofcolors:24});
+   }catch(err){console.error(err);showError('Could not start vector conversion: '+(err.message||err));}
+  },80);
+ }; reader.readAsDataURL(file);
+});
+/* V3: safer SVG path tokenizer.
+   IMPORTANT: command letters are explicitly limited to SVG path commands,
+   so exponent letters in scientific-notation numbers cannot become commands. */
+function tokenizePath(d){
+  const re=/[AaCcHhLlMmQqSsTtVvZz]|[-+]?(?:\d*\.\d+|\d+\.?)(?:[eE][-+]?\d+)?/g;
+  return d.match(re)||[];
+}
+function isCmd(t){return /^[AaCcHhLlMmQqSsTtVvZz]$/.test(t)}
+function finite(n){return Number.isFinite(n)}
+
+function convertSvgToEps(svgText){
+  const parser=new DOMParser(),doc=parser.parseFromString(svgText,'image/svg+xml');
+  const svg=doc.querySelector('svg');
+  const width=Math.round(parseFloat(svg?.getAttribute('width'))||1000);
+  const height=Math.round(parseFloat(svg?.getAttribute('height'))||1000);
+
+  let eps=`%!PS-Adobe-3.0 EPSF-3.0\n`;
+  eps+=`%%BoundingBox: 0 0 ${width} ${height}\n`;
+  eps+=`%%Creator: VectorForge V4\n`;
+  eps+=`%%Title: ${baseFileName}.eps\n`;
+  eps+=`%%Pages: 1\n%%EndComments\n\n`;
+  eps+=`gsave\n0 ${height} translate 1 -1 scale\n`;
+
+  const paths=doc.querySelectorAll('path');
+  paths.forEach(p=>{
+    const d=p.getAttribute('d'); if(!d)return;
+    let fillValue=p.getAttribute('fill')||'';
+    if(!fillValue){
+      const style=p.getAttribute('style')||'';
+      const fm=style.match(/(?:^|;)\s*fill\s*:\s*([^;]+)/i);
+      if(fm) fillValue=fm[1].trim();
+    }
+    const rgb=colorToRgb(fillValue);
+    if(rgb)eps+=`${(rgb.r/255).toFixed(5)} ${(rgb.g/255).toFixed(5)} ${(rgb.b/255).toFixed(5)} setrgbcolor\n`;
+    else eps+=`0 0 0 setrgbcolor\n`;
+
+    const tokens=tokenizePath(d);
+    let i=0,cmd='',cx=0,cy=0,sx=0,sy=0,lastC2=null,lastQ=null;
+    eps+='newpath\n';
+
+    const take=()=>i<tokens.length?tokens[i++]:null;
+    const readNums=n=>{
+      const a=[];
+      for(let k=0;k<n;k++){
+        if(i>=tokens.length || isCmd(tokens[i]))return null;
+        const v=Number(tokens[i++]); if(!finite(v))return null; a.push(v);
+      }
+      return a;
+    };
+    const setPoint=(x,y,relative)=>relative?[x+cx,y+cy]:[x,y];
+
+    while(i<tokens.length){
+      if(isCmd(tokens[i]))cmd=take();
+      if(!cmd)break;
+      const op=cmd.toUpperCase(),rel=cmd===cmd.toLowerCase();
+
+      if(op==='M'||op==='L'){
+        const a=readNums(2);if(!a)break;
+        const [x,y]=setPoint(a[0],a[1],rel);
+        if(op==='M'){eps+=`${x} ${y} moveto\n`;cx=x;cy=y;sx=x;sy=y;cmd=rel?'l':'L'}
+        else {eps+=`${x} ${y} lineto\n`;cx=x;cy=y}
+        lastC2=null;lastQ=null;
+      }else if(op==='H'){
+        const a=readNums(1);if(!a)break;const x=rel?a[0]+cx:a[0];
+        eps+=`${x} ${cy} lineto\n`;cx=x;lastC2=null;lastQ=null;
+      }else if(op==='V'){
+        const a=readNums(1);if(!a)break;const y=rel?a[0]+cy:a[0];
+        eps+=`${cx} ${y} lineto\n`;cy=y;lastC2=null;lastQ=null;
+      }else if(op==='C'){
+        const a=readNums(6);if(!a)break;
+        let x1=a[0],y1=a[1],x2=a[2],y2=a[3],x=a[4],y=a[5];
+        if(rel){x1+=cx;y1+=cy;x2+=cx;y2+=cy;x+=cx;y+=cy}
+        eps+=`${x1} ${y1} ${x2} ${y2} ${x} ${y} curveto\n`;
+        cx=x;cy=y;lastC2={x:x2,y:y2};lastQ=null;
+      }else if(op==='S'){
+        const a=readNums(4);if(!a)break;
+        let x2=a[0],y2=a[1],x=a[2],y=a[3];
+        if(rel){x2+=cx;y2+=cy;x+=cx;y+=cy}
+        let x1=cx,y1=cy;
+        if(lastC2){x1=2*cx-lastC2.x;y1=2*cy-lastC2.y}
+        eps+=`${x1} ${y1} ${x2} ${y2} ${x} ${y} curveto\n`;
+        cx=x;cy=y;lastC2={x:x2,y:y2};lastQ=null;
+      }else if(op==='Q'||op==='T'){
+        const n=op==='Q'?4:2,a=readNums(n);if(!a)break;
+        let qx,qy,x,y;
+        if(op==='Q'){qx=a[0];qy=a[1];x=a[2];y=a[3];if(rel){qx+=cx;qy+=cy;x+=cx;y+=cy}}
+        else{x=a[0];y=a[1];if(rel){x+=cx;y+=cy};qx=lastQ?2*cx-lastQ.x:cx;qy=lastQ?2*cy-lastQ.y:cy}
+        const c1x=cx+(2/3)*(qx-cx),c1y=cy+(2/3)*(qy-cy);
+        const c2x=x+(2/3)*(qx-x),c2y=y+(2/3)*(qy-y);
+        eps+=`${c1x} ${c1y} ${c2x} ${c2y} ${x} ${y} curveto\n`;
+        cx=x;cy=y;lastQ={x:qx,y:qy};lastC2={x:c2x,y:c2y};
+      }else if(op==='Z'){
+        eps+='closepath\n';cx=sx;cy=sy;lastC2=null;lastQ=null;
+      }else break;
+    }
+    eps+='fill\n';
+  });
+  eps+='grestore\nshowpage\n%%EOF\n';
+  return eps;
+}
+
+function colorToRgb(v){
+  if(!v) return null;
+  v=String(v).trim().toLowerCase();
+  if(v==='none' || v==='transparent') return null;
+
+  // rgb(255, 120, 40) and rgba(255, 120, 40, 1)
+  let m=v.match(/^rgba?\(\s*([0-9.]+)%?\s*,\s*([0-9.]+)%?\s*,\s*([0-9.]+)%?(?:\s*,\s*[0-9.]+)?\s*\)$/i);
+  if(m){
+    const nums=[+m[1],+m[2],+m[3]];
+    const percentParts=(v.match(/([0-9.]+)%/g)||[]).length;
+    if(percentParts===3) return {
+      r:Math.round(nums[0]*2.55),g:Math.round(nums[1]*2.55),b:Math.round(nums[2]*2.55)
+    };
+    if(nums.every(n=>Number.isFinite(n))) return {
+      r:Math.max(0,Math.min(255,Math.round(nums[0]))),
+      g:Math.max(0,Math.min(255,Math.round(nums[1]))),
+      b:Math.max(0,Math.min(255,Math.round(nums[2])))
+    };
+  }
+
+  if(/^#[0-9a-f]{6}$/i.test(v))
+    return {r:parseInt(v.slice(1,3),16),g:parseInt(v.slice(3,5),16),b:parseInt(v.slice(5,7),16)};
+
+  if(/^#[0-9a-f]{3}$/i.test(v))
+    return {r:parseInt(v[1]+v[1],16),g:parseInt(v[2]+v[2],16),b:parseInt(v[3]+v[3],16)};
+
+  const named={
+    black:[0,0,0],white:[255,255,255],red:[255,0,0],green:[0,128,0],
+    blue:[0,0,255],yellow:[255,255,0],orange:[255,165,0],purple:[128,0,128]
+  };
+  if(named[v]) return {r:named[v][0],g:named[v][1],b:named[v][2]};
+
+  return null;
+}
+
+function generateJpgPreview(svgText,cb){
+  const img=new Image(),blob=new Blob([svgText],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(blob);
+  img.onload=()=>{
+    const canvas=document.createElement('canvas');canvas.width=4000;canvas.height=4000;
+    const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,4000,4000);
+    ctx.drawImage(img,0,0,4000,4000);URL.revokeObjectURL(url);
+    canvas.toBlob(cb,'image/jpeg',1.0);
+  };
+  img.src=url;
+}
+function saveFile(blob,name){
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+
+function saveFile(blob,name){if(!blob)return;const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+document.getElementById('dlSvg').onclick=()=>saveFile(new Blob([currentSvgStr],{type:'image/svg+xml'}),baseFileName+'.svg');
+document.getElementById('dlEps').onclick=()=>saveFile(new Blob([currentEpsStr],{type:'application/postscript'}),baseFileName+'.eps');
+document.getElementById('dlJpg').onclick=()=>saveFile(currentJpgBlob,baseFileName+'.jpg');
+document.getElementById('dlZip').onclick=()=>{if(typeof JSZip==='undefined'){showError('ZIP engine did not load. You can still download SVG, EPS and JPG separately.');return;}const zip=new JSZip();zip.file(baseFileName+'.eps',currentEpsStr);zip.file(baseFileName+'.jpg',currentJpgBlob);zip.file(baseFileName+'.svg',currentSvgStr);zip.generateAsync({type:'blob'}).then(b=>saveFile(b,baseFileName+'-freepik-package.zip')).catch(err=>showError('ZIP creation failed: '+err.message));};
+// EPS viewer: the generated EPS is derived directly from the same SVG paths, so this gives a faithful visual preview without uploading the EPS anywhere.
+const modal=document.createElement('div');modal.className='vf-modal';modal.innerHTML='<div class="vf-modal-card"><div class="vf-modal-head"><strong>EPS Visual Viewer</strong><div class="vf-modal-tools"><button id="vfZoomOut">−</button><button id="vfZoomReset">100%</button><button id="vfZoomIn">+</button><button id="vfFull">⛶</button><button id="vfClose">✕</button></div></div><div class="vf-modal-body" id="vfViewerBody"></div><div class="vf-modal-foot">Visual preview of the generated EPS artwork · processed locally in your browser</div></div>';document.body.appendChild(modal);
+let viewerZoom=1;const viewerBody=document.getElementById('vfViewerBody');
+function showViewer(){if(!currentSvgStr)return;viewerBody.innerHTML=currentSvgStr;const s=viewerBody.querySelector('svg');if(s){s.style.transform='scale('+viewerZoom+')';}modal.classList.add('open');}
+function applyZoom(){const s=viewerBody.querySelector('svg');if(s)s.style.transform='scale('+viewerZoom+')';}
+document.getElementById('viewEps').onclick=()=>{viewerZoom=1;showViewer()};document.getElementById('vfZoomIn').onclick=()=>{viewerZoom=Math.min(3,viewerZoom+.2);applyZoom()};document.getElementById('vfZoomOut').onclick=()=>{viewerZoom=Math.max(.4,viewerZoom-.2);applyZoom()};document.getElementById('vfZoomReset').onclick=()=>{viewerZoom=1;applyZoom()};document.getElementById('vfClose').onclick=()=>modal.classList.remove('open');modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});document.getElementById('vfFull').onclick=()=>{const c=modal.querySelector('.vf-modal-card');if(c.requestFullscreen)c.requestFullscreen()};document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"VectorForge JPG to EPS Converter",
+  "url":"https://vectorforge-umber.vercel.app/jpg-to-eps/",
+  "applicationCategory":"DesignApplication",
+  "operatingSystem":"Any",
+  "description":"Free browser-based JPG to EPS converter with SVG output, JPG preview, EPS validation and ZIP packaging.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+</body>
+</html>
