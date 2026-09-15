@@ -1,1 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VectorForge Blog | Image Conversion, SVG & EPS Guides</title>
+
+  <meta name="description" content="Explore VectorForge guides, tutorials and tips about JPG to EPS, PNG to EPS, SVG, vector graphics and image file conversion.">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://vectorforge-umber.vercel.app/blog/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VectorForge Blog | Image Conversion, SVG & EPS Guides">
+  <meta property="og:description" content="Practical guides and tutorials about JPG, PNG, SVG, EPS and image conversion for creators and designers.">
+  <meta property="og:url" content="https://vectorforge-umber.vercel.app/blog/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vectorforge-umber.vercel.app/#organization",
+        "name": "VectorForge",
+        "url": "https://vectorforge-umber.vercel.app/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vectorforge-umber.vercel.app/#website",
+        "url": "https://vectorforge-umber.vercel.app/",
+        "name": "VectorForge",
+        "publisher": {
+          "@id": "https://vectorforge-umber.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://vectorforge-umber.vercel.app/blog/#webpage",
+        "url": "https://vectorforge-umber.vercel.app/blog/",
+        "name": "VectorForge Blog",
+        "description": "Guides and tutorials about image conversion, SVG, EPS and vector graphics.",
+        "isPartOf": {
+          "@id": "https://vectorforge-umber.vercel.app/#website"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://vectorforge-umber.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://vectorforge-umber.vercel.app/blog/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 50% -10%, #1c1730 0, #0b0d10 38%),
+        #0b0d10;
+      color: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      border-bottom: 1px solid #20242a;
+      padding: 22px 6%;
+      background: rgba(11, 13, 16, 0.85);
+    }
+
+    .nav {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.7px;
+    }
+
+    .logo span {
+      color: #8b5cf6;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: #aeb4bd;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 95px 6% 70px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #a78bfa;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      max-width: 950px;
+      margin: auto;
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -3.5px;
+    }
+
+    .hero h1 span {
+      color: #8b5cf6;
+    }
+
+    .hero-text {
+      max-width: 720px;
+      margin: 25px auto 0;
+      color: #aeb4bd;
+      font-size: 18px;
+    }
+
+    /* FEATURED */
+
+    .featured-wrap {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 6% 75px;
+    }
+
+    .featured {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #302b43;
+      border-radius: 26px;
+      padding: 42px;
+      background:
+        radial-gradient(circle at 90% 10%, #302052 0, transparent 35%),
+        #11151a;
+    }
+
+    .featured-badge {
+      display: inline-block;
+      background: #8b5cf6;
+      color: #ffffff;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .featured h2 {
+      max-width: 800px;
+      font-size: clamp(30px, 5vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      margin-bottom: 17px;
+    }
+
+    .featured p {
+      max-width: 760px;
+      color: #adb4be;
+      font-size: 16px;
+      margin-bottom: 26px;
+    }
+
+    .read-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 19px;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #0b0d10;
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform 0.2s ease;
+    }
+
+    .read-button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* SECTION */
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 65px 6%;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: 35px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      max-width: 500px;
+      color: #8f97a2;
+      font-size: 14px;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .category {
+      padding: 24px;
+      border: 1px solid #242932;
+      border-radius: 17px;
+      background: #11151a;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .category:hover {
+      transform: translateY(-4px);
+      border-color: #51476e;
+    }
+
+    .category-icon {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .category h3 {
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .category p {
+      color: #9098a3;
+      font-size: 13px;
+    }
+
+    /* ARTICLES */
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .article {
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+      border: 1px solid #242932;
+      border-radius: 19px;
+      overflow: hidden;
+      background: #11151a;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .article:hover {
+      transform: translateY(-5px);
+      border-color: #51476e;
+    }
+
+    .article-top {
+      min-height: 125px;
+      display: flex;
+      align-items: center;
+      padding: 25px;
+      background:
+        linear-gradient(135deg, #171b23, #101217);
+      border-bottom: 1px solid #242932;
+    }
+
+    .article-number {
+      font-size: 46px;
+      font-weight: 900;
+      color: #292e38;
+    }
+
+    .article-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 24px;
+    }
+
+    .article-label {
+      color: #8b5cf6;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 9px;
+    }
+
+    .article h3 {
+      font-size: 21px;
+      line-height: 1.25;
+      margin-bottom: 11px;
+    }
+
+    .article p {
+      color: #969eaa;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .article-link {
+      margin-top: auto;
+      color: #c8b8ff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .article-link:hover {
+      color: #ffffff;
+    }
+
+    /* CTA */
+
+    .cta {
+      max-width: 1200px;
+      margin: 30px auto 75px;
+      padding: 0 6%;
+    }
+
+    .cta-box {
+      border: 1px solid #302b43;
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, #261c3f 0, transparent 55%),
+        #11151a;
+    }
+
+    .cta-box h2 {
+      font-size: 35px;
+      margin-bottom: 13px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+      margin: auto auto 25px;
+      color: #9ca4af;
+      font-size: 15px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 10px;
+      background: #8b5cf6;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .cta-button:hover {
+      background: #7c4ee8;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #20242a;
+      padding: 30px 6%;
+    }
+
+    .footer-flex {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #858c96;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 18px 5%;
+      }
+
+      .nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 70px 5% 55px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .featured-wrap,
+      section,
+      .cta {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .featured {
+        padding: 28px;
+        border-radius: 20px;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 35px 22px;
+      }
+
+      .footer-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="nav">
+
+      <a href="/" class="logo">
+        Vector<span>Forge</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/jpg-to-eps/">JPG to EPS</a>
+        <a href="/png-to-eps/">PNG to EPS</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <div class="hero">
+
+      <div class="eyebrow">
+        VectorForge Blog
+      </div>
+
+      <h1>
+        Learn. Create.<br>
+        <span>Convert Better.</span>
+      </h1>
+
+      <p class="hero-text">
+        Practical guides, tutorials and tips for working with JPG, PNG,
+        SVG, EPS and vector graphics.
+      </p>
+
+    </div>
+
+
+    <!-- FEATURED ARTICLE -->
+
+    <div class="featured-wrap">
+
+      <article class="featured">
+
+        <div class="featured-badge">
+          Featured Guide
+        </div>
+
+        <h2>
+          How to Convert JPG to EPS Online
+        </h2>
+
+        <p>
+          Learn what EPS files are, when to use them and how to convert
+          JPG images into SVG and EPS formats using a browser-based workflow.
+        </p>
+
+        <a class="read-button" href="/blog/how-to-convert-jpg-to-eps/">
+          Read Guide →
+        </a>
+
+      </article>
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <section>
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">Explore Topics</div>
+          <h2>Find the right guide.</h2>
+        </div>
+
+        <p>
+          Explore practical information about image formats, vector graphics
+          and file conversion workflows.
+        </p>
+
+      </div>
+
+
+      <div class="categories">
+
+        <div class="category">
+
+          <div class="category-icon">⚡</div>
+
+          <h3>Image Conversion</h3>
+
+          <p>
+            Learn how to convert and prepare common image formats.
+          </p>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">◇</div>
+
+          <h3>SVG Guides</h3>
+
+          <p>
+            Understand SVG files, scalable graphics and useful workflows.
+          </p>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">◆</div>
+
+          <h3>EPS Guides</h3>
+
+          <p>
+            Learn about EPS files and where they can be useful.
+          </p>
+
+        </div>
+
+
+        <div class="category">
+
+          <div class="category-icon">✦</div>
+
+          <h3>Design Tips</h3>
+
+          <p>
+            Simple tips for creators and designers working with graphics.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LATEST ARTICLES -->
+
+    <section>
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">Latest Guides</div>
+          <h2>Helpful articles for creators.</h2>
+        </div>
+
+        <p>
+          Straightforward explanations without unnecessary technical jargon.
+        </p>
+
+      </div>
+
+
+      <div class="articles">
+
+
+        <article class="article">
+
+          <div class="article-top">
+            <div class="article-number">01</div>
+          </div>
+
+          <div class="article-body">
+
+            <div class="article-label">
+              EPS
+            </div>
+
+            <h3>
+              What Is an EPS File?
+            </h3>
+
+            <p>
+              A simple guide to EPS files, their purpose and how they compare
+              with other image formats.
+            </p>
+
+            <a class="article-link" href="/blog/what-is-an-eps-file/">
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="article">
+
+          <div class="article-top">
+            <div class="article-number">02</div>
+          </div>
+
+          <div class="article-body">
+
+            <div class="article-label">
+              SVG
+            </div>
+
+            <h3>
+              SVG vs EPS: What's the Difference?
+            </h3>
+
+            <p>
+              Understand the main differences between SVG and EPS and when
+              each format may be useful.
+            </p>
+
+            <a class="article-link" href="/blog/svg-vs-eps/">
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="article">
+
+          <div class="article-top">
+            <div class="article-number">03</div>
+          </div>
+
+          <div class="article-body">
+
+            <div class="article-label">
+              PNG
+            </div>
+
+            <h3>
+              How to Convert PNG to EPS
+            </h3>
+
+            <p>
+              Learn the basic workflow for converting PNG artwork into SVG
+              and EPS formats.
+            </p>
+
+            <a class="article-link" href="/blog/how-to-convert-png-to-eps/">
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="article">
+
+          <div class="article-top">
+            <div class="article-number">04</div>
+          </div>
+
+          <div class="article-body">
+
+            <div class="article-label">
+              SVG
+            </div>
+
+            <h3>
+              How to Convert an Image to SVG
+            </h3>
+
+            <p>
+              Explore the basics of converting raster images into scalable
+              SVG graphics.
+            </p>
+
+            <a class="article-link" href="/blog/how-to-convert-image-to-svg/">
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="article">
+
+          <div class="article-top">
+            <div class="article-number">05</div>
+          </div>
+
+          <div class="article-body">
+
+            <div class="article-label">
+              Design
+            </div>
+
+            <h3>
+              Raster vs Vector Images
+            </h3>
+
+            <p>
+              Learn the difference between raster and vector graphics and
+              why the distinction matters for design work.
+            </p>
+
+            <a class="article-link" href="/blog/raster-vs-vector/">
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="article">
+
+          <div class="article-top">
+            <div class="article-number">06</div>
+          </div>
+
+          <div class="article-body">
+
+            <div class="article-label">
+              EPS
+            </div>
+
+            <h3>
+              EPS File Tips for Designers
+            </h3>
+
+            <p>
+              Practical tips for checking, preparing and using EPS files
+              in creative workflows.
+            </p>
+
+            <a class="article-link" href="/blog/eps-file-tips/">
+              Read Article →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <div class="cta">
+
+      <div class="cta-box">
+
+        <div class="eyebrow">
+          Need a Tool?
+        </div>
+
+        <h2>
+          Convert your image now.
+        </h2>
+
+        <p>
+          Skip the complicated workflow. Use VectorForge's browser-based
+          image conversion tools to prepare your files.
+        </p>
+
+        <a class="cta-button" href="/">
+          Explore VectorForge Tools →
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-flex">
+
+      <div>
+        © 2026 VectorForge. Free tools for creators.
+      </div>
+
+      <div class="footer-links">
+
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <a href="/blog/">Blog</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms &amp; Conditions</a>
+        <a href="/contact/">Contact Us</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
