@@ -1,1 +1,474 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About VectorForge | Free Image Conversion Tools</title>
+
+  <meta name="description" content="Learn about VectorForge, a free browser-based toolkit for converting and preparing images for SVG and EPS workflows. No signup or watermark.">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://vectorforge-umber.vercel.app/about/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About VectorForge | Free Image Conversion Tools">
+  <meta property="og:description" content="Learn about VectorForge and our free browser-based image conversion tools for creators and designers.">
+  <meta property="og:url" content="https://vectorforge-umber.vercel.app/about/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vectorforge-umber.vercel.app/#organization",
+        "name": "VectorForge",
+        "url": "https://vectorforge-umber.vercel.app/"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://vectorforge-umber.vercel.app/about/#webpage",
+        "url": "https://vectorforge-umber.vercel.app/about/",
+        "name": "About VectorForge | Free Image Conversion Tools",
+        "description": "Learn about VectorForge, a free browser-based toolkit for converting and preparing images for SVG and EPS workflows.",
+        "isPartOf": {
+          "@id": "https://vectorforge-umber.vercel.app/#website"
+        },
+        "about": {
+          "@id": "https://vectorforge-umber.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vectorforge-umber.vercel.app/#website",
+        "url": "https://vectorforge-umber.vercel.app/",
+        "name": "VectorForge",
+        "publisher": {
+          "@id": "https://vectorforge-umber.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://vectorforge-umber.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About Us",
+            "item": "https://vectorforge-umber.vercel.app/about/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0d10;
+      color: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      border-bottom: 1px solid #20242a;
+      padding: 22px 7%;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #8b5cf6;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: #aeb4bd;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+      padding: 90px 7% 60px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: #8b5cf6;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #aeb4bd;
+      font-size: 18px;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 55px 7%;
+    }
+
+    .section-head {
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 34px;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-head p {
+      color: #aeb4bd;
+      max-width: 800px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #11151a;
+      border: 1px solid #242932;
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #aeb4bd;
+      font-size: 15px;
+    }
+
+    .mission {
+      background: #11151a;
+      border: 1px solid #242932;
+      border-radius: 18px;
+      padding: 35px;
+    }
+
+    .mission h2 {
+      margin-bottom: 20px;
+    }
+
+    .mission p {
+      color: #c4c9d1;
+      margin-bottom: 15px;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .tool-link {
+      display: inline-block;
+      border: 1px solid #303640;
+      background: #11151a;
+      border-radius: 10px;
+      padding: 12px 18px;
+      color: #d9dde4;
+      font-size: 14px;
+    }
+
+    .tool-link:hover {
+      border-color: #8b5cf6;
+      color: #ffffff;
+    }
+
+    footer {
+      border-top: 1px solid #20242a;
+      padding: 30px 7%;
+      margin-top: 40px;
+    }
+
+    .footer-flex {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #858c96;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 800px) {
+      .nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      .footer-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+
+      <a href="/" class="logo">
+        Vector<span>Forge</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/jpg-to-eps/">JPG to EPS</a>
+        <a href="/png-to-eps/">PNG to EPS</a>
+        <a href="/about/">About Us</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <div class="hero">
+
+      <div class="eyebrow">About VectorForge</div>
+
+      <h1>Simple tools for creators and designers.</h1>
+
+      <p>
+        VectorForge is a free browser-based toolkit designed to make image
+        conversion and file preparation simple, accessible and convenient.
+      </p>
+
+    </div>
+
+
+    <section>
+
+      <div class="section-head">
+
+        <div class="eyebrow">What We Do</div>
+
+        <h2>Free image conversion tools</h2>
+
+        <p>
+          VectorForge provides easy-to-use online tools for working with image
+          files and preparing graphics for different creative workflows.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+        <div class="card">
+
+          <h3>JPG to EPS</h3>
+
+          <p>
+            Convert JPG images into SVG and EPS files and prepare a downloadable
+            package directly in your browser.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>PNG to EPS</h3>
+
+          <p>
+            Convert PNG images into SVG and EPS formats while preparing your
+            files for editing and digital workflows.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>Browser-Based</h3>
+
+          <p>
+            VectorForge tools are designed to work directly in your web browser,
+            without requiring traditional desktop software.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <div class="mission">
+
+        <div class="eyebrow">Our Mission</div>
+
+        <h2>Make useful creative tools easier to access.</h2>
+
+        <p>
+          Image conversion and file preparation can sometimes require expensive
+          software or complicated workflows. VectorForge aims to make common
+          image tasks simpler through straightforward browser-based tools.
+        </p>
+
+        <p>
+          We are building practical tools for creators, designers, content
+          creators, online sellers and digital professionals who need simple
+          ways to work with their image files.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <div class="section-head">
+
+        <div class="eyebrow">Explore VectorForge</div>
+
+        <h2>Try our free tools</h2>
+
+        <p>
+          Explore the available VectorForge tools and convert your images
+          directly from your browser.
+        </p>
+
+      </div>
+
+
+      <div class="tools">
+
+        <a class="tool-link" href="/jpg-to-eps/">
+          JPG to EPS Converter
+        </a>
+
+        <a class="tool-link" href="/png-to-eps/">
+          PNG to EPS Converter
+        </a>
+
+        <a class="tool-link" href="/">
+          Image to SVG & EPS
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-flex">
+
+      <div>
+        © 2026 VectorForge. Free tools for creators.
+      </div>
+
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <a href="/jpg-to-eps/">JPG to EPS</a>
+        <a href="/png-to-eps/">PNG to EPS</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
