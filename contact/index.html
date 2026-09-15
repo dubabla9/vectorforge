@@ -1,1 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | VectorForge</title>
+
+  <meta name="description" content="Contact VectorForge for questions, feedback, technical issues or suggestions about our free image conversion tools.">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://vectorforge-umber.vercel.app/contact/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Us | VectorForge">
+  <meta property="og:description" content="Contact VectorForge for questions, feedback, technical issues or suggestions about our free image conversion tools.">
+  <meta property="og:url" content="https://vectorforge-umber.vercel.app/contact/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vectorforge-umber.vercel.app/#organization",
+        "name": "VectorForge",
+        "url": "https://vectorforge-umber.vercel.app/",
+        "email": "mailto:dubabla9@gmail.com"
+      },
+      {
+        "@type": "ContactPage",
+        "@id": "https://vectorforge-umber.vercel.app/contact/#webpage",
+        "url": "https://vectorforge-umber.vercel.app/contact/",
+        "name": "Contact Us | VectorForge",
+        "description": "Contact VectorForge for questions, feedback, technical issues or suggestions about our free image conversion tools.",
+        "isPartOf": {
+          "@id": "https://vectorforge-umber.vercel.app/#website"
+        },
+        "about": {
+          "@id": "https://vectorforge-umber.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vectorforge-umber.vercel.app/#website",
+        "url": "https://vectorforge-umber.vercel.app/",
+        "name": "VectorForge",
+        "publisher": {
+          "@id": "https://vectorforge-umber.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://vectorforge-umber.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact Us",
+            "item": "https://vectorforge-umber.vercel.app/contact/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0d10;
+      color: #f5f7fa;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      border-bottom: 1px solid #20242a;
+      padding: 22px 7%;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #8b5cf6;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: #aeb4bd;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+      padding: 85px 7% 55px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: #8b5cf6;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #aeb4bd;
+      font-size: 17px;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 7% 70px;
+    }
+
+    .contact-card {
+      background: #11151a;
+      border: 1px solid #242932;
+      border-radius: 18px;
+      padding: 38px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .contact-card p {
+      color: #b9c0c9;
+      font-size: 15px;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .email-box {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 15px 22px;
+      border: 1px solid #303640;
+      border-radius: 10px;
+      background: #0b0d10;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .email-box:hover {
+      border-color: #8b5cf6;
+    }
+
+    .topics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .topic {
+      background: #11151a;
+      border: 1px solid #242932;
+      border-radius: 16px;
+      padding: 26px;
+    }
+
+    .topic h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .topic p {
+      color: #aeb4bd;
+      font-size: 14px;
+    }
+
+    .note {
+      margin-top: 30px;
+      color: #858c96;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    footer {
+      border-top: 1px solid #20242a;
+      padding: 30px 7%;
+    }
+
+    .footer-flex {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #858c96;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 800px) {
+
+      .nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .contact-card {
+        padding: 28px 20px;
+      }
+
+      .topics {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+
+      <a href="/" class="logo">
+        Vector<span>Forge</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/jpg-to-eps/">JPG to EPS</a>
+        <a href="/png-to-eps/">PNG to EPS</a>
+        <a href="/about/">About Us</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <div class="hero">
+
+      <div class="eyebrow">Get in Touch</div>
+
+      <h1>Contact VectorForge.</h1>
+
+      <p>
+        Have a question, feedback, technical issue or suggestion?
+        We'd love to hear from you.
+      </p>
+
+    </div>
+
+
+    <section>
+
+      <div class="contact-card">
+
+        <div class="eyebrow">Email Us</div>
+
+        <h2>How can we help?</h2>
+
+        <p>
+          For questions about VectorForge, feedback about our tools,
+          technical issues or suggestions for new features, contact us
+          by email.
+        </p>
+
+        <a
+          class="email-box"
+          href="mailto:dubabla9@gmail.com"
+        >
+          dubabla9@gmail.com
+        </a>
+
+      </div>
+
+
+      <div class="topics">
+
+        <div class="topic">
+
+          <h3>Technical Issues</h3>
+
+          <p>
+            Let us know if you experience a problem while using one of
+            the VectorForge tools.
+          </p>
+
+        </div>
+
+
+        <div class="topic">
+
+          <h3>Feedback</h3>
+
+          <p>
+            We welcome suggestions and feedback that can help us improve
+            the VectorForge experience.
+          </p>
+
+        </div>
+
+
+        <div class="topic">
+
+          <h3>Tool Suggestions</h3>
+
+          <p>
+            Have an idea for a useful image conversion or file preparation
+            tool? Send us your suggestion.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <p class="note">
+        We aim to review messages and respond as soon as reasonably possible.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-flex">
+
+      <div>
+        © 2026 VectorForge. Free tools for creators.
+      </div>
+
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <a href="/jpg-to-eps/">JPG to EPS</a>
+        <a href="/png-to-eps/">PNG to EPS</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/contact/">Contact Us</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
