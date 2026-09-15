@@ -91,9 +91,13 @@
     }
 
     header {
-      border-bottom: 1px solid #20242a;
-      padding: 22px 6%;
-      background: rgba(11, 13, 16, 0.85);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #29233d;
+      padding: 16px 6%;
+      background: rgba(10, 11, 16, 0.92);
+      backdrop-filter: blur(14px);
     }
 
     .nav {
@@ -106,25 +110,54 @@
     }
 
     .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: -0.7px;
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(90deg, #ffffff, #a78bfa, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .logo span {
-      color: #8b5cf6;
+      background: linear-gradient(90deg, #c084fc, #8b5cf6, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      align-items: center;
+      gap: 8px;
       font-size: 14px;
       color: #aeb4bd;
       flex-wrap: wrap;
     }
 
+    .nav-links a {
+      padding: 9px 12px;
+      border-radius: 9px;
+      transition: 0.2s ease;
+    }
+
     .nav-links a:hover {
       color: #ffffff;
+      background: #19152a;
+    }
+
+    .nav-links a[href="/blog/"] {
+      color: #ffffff;
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      box-shadow: 0 5px 20px rgba(139, 92, 246, 0.25);
+    }
+
+    .nav-cta {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #ec4899, #8b5cf6) !important;
+      box-shadow: 0 5px 20px rgba(236, 72, 153, 0.22);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
     }
 
     /* HERO */
@@ -419,28 +452,82 @@
     /* FOOTER */
 
     footer {
-      border-top: 1px solid #20242a;
-      padding: 30px 6%;
+      border-top: 1px solid #29233d;
+      padding: 55px 6% 25px;
+      margin-top: 30px;
+      background:
+        radial-gradient(circle at 15% 100%, #211735 0, transparent 32%),
+        radial-gradient(circle at 85% 100%, #171d38 0, transparent 32%),
+        #090b0f;
     }
 
     .footer-flex {
       max-width: 1250px;
       margin: auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 45px;
       color: #858c96;
       font-size: 13px;
     }
 
+    .footer-brand {
+      max-width: 330px;
+    }
+
+    .footer-logo {
+      display: inline-block;
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #c084fc, #8b5cf6, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .footer-brand p {
+      color: #858c96;
+      line-height: 1.7;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .footer-column h3 {
+      color: #f5f7fa;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
     .footer-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .footer-links a {
+      color: #858c96;
+      transition: 0.2s ease;
     }
 
     .footer-links a:hover {
-      color: #ffffff;
+      color: #c4b5fd;
+      transform: translateX(2px);
+    }
+
+    .footer-bottom {
+      max-width: 1250px;
+      margin: 40px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #20242a;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #666d77;
+      font-size: 12px;
     }
 
     /* MOBILE */
@@ -506,12 +593,21 @@
       }
 
       .footer-flex {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         text-align: center;
       }
 
-      .footer-links {
-        justify-content: center;
+      .footer-brand {
+        margin: auto;
+      }
+
+      .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
       }
 
     }
