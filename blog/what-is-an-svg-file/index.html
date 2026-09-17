@@ -1,1 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>What Is an SVG File and How Does It Work? | VectorForge</title>
+  <meta name="description" content="Learn what an SVG file is, how SVG works, why it stays sharp at any size, how SVG files are structured, and where to use SVG on the web and in design.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vectorforge-umber.vercel.app/blog/what-is-an-svg-file/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What Is an SVG File and How Does It Work?">
+  <meta property="og:description" content="A practical beginner-friendly guide to SVG files, vector paths, scalability, editing, browser use, and common SVG mistakes.">
+  <meta property="og:url" content="https://vectorforge-umber.vercel.app/blog/what-is-an-svg-file/">
+  <meta property="og:image" content="https://vectorforge-umber.vercel.app/blog/what-is-an-svg-file/what-is-an-svg-file-guide.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Is an SVG File and How Does It Work?">
+  <meta name="twitter:description" content="Understand SVG files, how they work, and when to use them.">
+  <meta name="twitter:image" content="https://vectorforge-umber.vercel.app/blog/what-is-an-svg-file/what-is-an-svg-file-guide.png">
+
+  <style>
+    :root{
+      --bg:#07111f;
+      --panel:#0d1a2c;
+      --panel2:#101f34;
+      --line:#203650;
+      --text:#eaf2ff;
+      --muted:#a8b8cc;
+      --accent:#19c8ff;
+      --accent2:#7b61ff;
+      --green:#35d07f;
+      --warning:#f7b955;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#06101d 0%,#091525 45%,#06101d 100%);
+      color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.75;
+    }
+    a{color:#67d9ff;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1180px;margin:auto;padding:0 22px}
+    header{
+      border-bottom:1px solid var(--line);
+      background:rgba(5,13,24,.92);
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(14px);
+    }
+    .nav{
+      min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{font-weight:900;font-size:24px;letter-spacing:-.7px}
+    .brand span{color:var(--accent)}
+    .nav a{color:#cbd9ea;font-size:14px;margin-left:18px}
+    .hero{padding:56px 0 34px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      color:#8fe7ff;font-size:13px;font-weight:800;
+      letter-spacing:.12em;text-transform:uppercase;
+      background:#0c2234;border:1px solid #194664;border-radius:999px;padding:8px 13px;
+    }
+    h1{
+      font-size:clamp(38px,6vw,68px);
+      line-height:1.05;letter-spacing:-2.4px;
+      max-width:950px;margin:20px 0 16px;
+    }
+    .lead{font-size:20px;color:#b8c8db;max-width:850px}
+    .hero-img{
+      width:100%;display:block;border-radius:20px;
+      border:1px solid #24425f;box-shadow:var(--shadow);margin:34px 0 42px;
+    }
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:34px;align-items:start}
+    article{min-width:0}
+    .toc,.side-card{
+      background:linear-gradient(180deg,#0d1b2d,#0a1727);
+      border:1px solid var(--line);border-radius:16px;padding:20px;
+      box-shadow:var(--shadow);
+    }
+    .toc{margin-bottom:26px}
+    .toc strong,.side-card h3{display:block;margin-bottom:10px;color:#fff}
+    .toc a{display:block;padding:5px 0;color:#b8d6ea;font-size:14px}
+    h2{
+      font-size:32px;line-height:1.2;letter-spacing:-.8px;
+      margin:50px 0 15px;
+    }
+    h3{font-size:21px;margin:30px 0 10px}
+    p{color:#c3d0df}
+    ul,ol{color:#c3d0df;padding-left:24px}
+    li{margin:7px 0}
+    .callout{
+      border:1px solid #205a78;
+      background:linear-gradient(135deg,#0b2435,#0c1a2c);
+      border-radius:15px;padding:20px;margin:24px 0;
+    }
+    .callout strong{color:#fff}
+    .code{
+      background:#050b13;border:1px solid #1e344a;border-radius:14px;
+      padding:18px;overflow:auto;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+      color:#bcefff;font-size:14px;line-height:1.55;
+    }
+    table{width:100%;border-collapse:collapse;margin:22px 0;background:#0a1727;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    th,td{padding:13px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+    th{background:#102238;color:#fff}
+    td{color:#bdcad9}
+    tr:last-child td{border-bottom:0}
+    .cta{
+      margin:30px 0;padding:26px;border-radius:17px;
+      background:linear-gradient(135deg,#0a3850,#121c42);
+      border:1px solid #226d91;
+    }
+    .cta h3{margin-top:0}
+    .btn{
+      display:inline-block;margin-top:10px;padding:11px 17px;border-radius:10px;
+      background:linear-gradient(90deg,#12bde9,#5869ff);color:white;font-weight:800;
+      text-decoration:none;
+    }
+    .faq{border-top:1px solid var(--line);padding-top:12px;margin-top:10px}
+    .faq h3{font-size:19px}
+    .meta{color:#8ea2b9;font-size:14px;margin-top:14px}
+    .side-card{position:sticky;top:94px}
+    .side-card p,.side-card li{font-size:14px}
+    .related a{display:block;padding:8px 0;border-bottom:1px solid #1b2d43}
+    footer{border-top:1px solid var(--line);margin-top:70px;padding:38px 0 55px;color:#8396ac}
+    .sources{font-size:14px}
+    .note{color:#91a4ba;font-size:13px}
+    @media(max-width:900px){
+      .layout{grid-template-columns:1fr}
+      .side-card{position:static}
+      .nav .links{display:none}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"What Is an SVG File and How Does It Work?",
+    "description":"A beginner-friendly guide to SVG files, how they work, why they scale cleanly, and where to use them.",
+    "image":"https://vectorforge-umber.vercel.app/blog/what-is-an-svg-file/what-is-an-svg-file-guide.png",
+    "author":{"@type":"Organization","name":"VectorForge"},
+    "publisher":{"@type":"Organization","name":"VectorForge"},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://vectorforge-umber.vercel.app/blog/what-is-an-svg-file/"},
+    "url":"https://vectorforge-umber.vercel.app/blog/what-is-an-svg-file/"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What is an SVG file?",
+        "acceptedAnswer":{"@type":"Answer","text":"An SVG file is a Scalable Vector Graphics file. It uses XML-based markup to describe two-dimensional graphics with shapes, paths, text, colors and other graphical instructions."}
+      },
+      {
+        "@type":"Question",
+        "name":"Why does SVG stay sharp when enlarged?",
+        "acceptedAnswer":{"@type":"Answer","text":"SVG describes graphics with vector geometry and drawing instructions rather than storing the image as a fixed grid of pixels, so the browser can render the same design at different sizes."}
+      },
+      {
+        "@type":"Question",
+        "name":"Can I edit an SVG file?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes. SVG can be edited in vector design software and, because it is text-based markup, it can also be inspected or edited with a text editor when appropriate."}
+      },
+      {
+        "@type":"Question",
+        "name":"Can an SVG contain a photo?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes. SVG supports an image element that can reference raster images, so an SVG document can contain bitmap content as well as vector graphics."}
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="https://vectorforge-umber.vercel.app/">Vector<span>Forge</span></a>
+    <div class="links">
+      <a href="https://vectorforge-umber.vercel.app/">Home</a>
+      <a href="https://vectorforge-umber.vercel.app/png-to-eps/">PNG to EPS</a>
+      <a href="https://vectorforge-umber.vercel.app/jpg-to-eps/">JPG to EPS</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="eyebrow">VectorForge Guide • SVG Basics</span>
+    <h1>What Is an SVG File and How Does It Work?</h1>
+    <p class="lead">
+      SVG is one of the most useful image formats for logos, icons, illustrations and responsive web graphics.
+      But what actually happens inside an SVG file? This guide explains the format in plain language, from
+      vector paths and XML markup to scaling, browser rendering, editing and common use cases.
+    </p>
+    <p class="meta">Updated September 2026 • Beginner-friendly guide</p>
+    <img class="hero-img" src="what-is-an-svg-file-guide.png" alt="Infographic explaining what an SVG file is and how SVG works">
+  </section>
+
+  <div class="layout">
+    <article>
+      <nav class="toc">
+        <strong>In this guide</strong>
+        <a href="#what-is-svg">1. What is an SVG file?</a>
+        <a href="#how-works">2. How does SVG work?</a>
+        <a href="#inside-svg">3. What is inside an SVG file?</a>
+        <a href="#scalable">4. Why is SVG scalable?</a>
+        <a href="#uses">5. Where is SVG used?</a>
+        <a href="#advantages">6. Main advantages of SVG</a>
+        <a href="#limitations">7. Limitations and things to watch</a>
+        <a href="#svg-vs-raster">8. SVG vs PNG and JPG</a>
+        <a href="#create-edit">9. How to create or edit SVG</a>
+        <a href="#conversion">10. Converting images to SVG</a>
+        <a href="#faq">11. FAQ</a>
+      </nav>
+
+      <section id="what-is-svg">
+        <h2>What Is an SVG File?</h2>
+        <p>
+          SVG stands for <strong>Scalable Vector Graphics</strong>. It is an XML-based format for describing
+          two-dimensional vector graphics. Instead of recording an image as a fixed grid of colored pixels,
+          an SVG document describes graphical objects such as shapes, paths and text using markup and attributes.
+        </p>
+        <p>
+          That distinction is the reason an SVG logo can be displayed as a small website icon or enlarged for
+          another design without the same pixelation you would normally see when enlarging a raster image.
+          Modern browsers can render SVG directly, and SVG can also be placed inside HTML.
+        </p>
+
+        <div class="callout">
+          <strong>Simple definition:</strong>
+          Think of an SVG as a set of instructions for drawing an image. The file describes what to draw,
+          where to place it, how large it should be, and how it should look.
+        </div>
+      </section>
+
+      <section id="how-works">
+        <h2>How Does SVG Work?</h2>
+        <p>
+          SVG uses XML-style markup to describe a graphic. A simple document can contain an
+          <code>&lt;svg&gt;</code> root element and child elements such as <code>&lt;rect&gt;</code>,
+          <code>&lt;circle&gt;</code>, <code>&lt;path&gt;</code>, <code>&lt;text&gt;</code> and groups.
+          The browser reads those instructions and renders the result.
+        </p>
+
+        <div class="code">&lt;svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;rect width="200" height="120" fill="#0b1f35"/&gt;
+  &lt;circle cx="100" cy="60" r="38" fill="#19c8ff"/&gt;
+  &lt;text x="100" y="67" text-anchor="middle"
+        font-size="20" fill="white"&gt;SVG&lt;/text&gt;
+&lt;/svg&gt;</div>
+
+        <p>
+          In this example, the browser receives instructions for a rectangle, a circle and a text object.
+          The same underlying geometry can be mapped to different display sizes. SVG also has a coordinate
+          system and attributes such as <code>viewBox</code> that help define how the drawing is mapped to its viewport.
+        </p>
+      </section>
+
+      <section id="inside-svg">
+        <h2>What Is Inside an SVG File?</h2>
+        <p>
+          An SVG can look complicated when you open it in a text editor, but most files are built from a
+          relatively understandable set of ingredients.
+        </p>
+
+        <table>
+          <thead>
+            <tr><th>SVG component</th><th>What it does</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>&lt;svg&gt;</code></td><td>Defines the SVG document or an SVG drawing area.</td></tr>
+            <tr><td><code>&lt;path&gt;</code></td><td>Describes flexible lines and curves using path commands.</td></tr>
+            <tr><td><code>&lt;rect&gt;</code> / <code>&lt;circle&gt;</code></td><td>Creates common geometric shapes.</td></tr>
+            <tr><td><code>&lt;g&gt;</code></td><td>Groups related graphical elements together.</td></tr>
+            <tr><td><code>&lt;text&gt;</code></td><td>Adds text to the graphic.</td></tr>
+            <tr><td><code>fill</code> / <code>stroke</code></td><td>Controls fills, outlines and their visual appearance.</td></tr>
+            <tr><td><code>viewBox</code></td><td>Defines the coordinate system used for the SVG viewport.</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          SVG can also include gradients, masks, clipping paths, filters, animation and scripting.
+          It can even reference raster images through the SVG <code>&lt;image&gt;</code> element, so not every
+          SVG document is made exclusively from pure vector shapes.
+        </p>
+      </section>
+
+      <section id="scalable">
+        <h2>Why Is SVG Scalable?</h2>
+        <p>
+          The word <em>scalable</em> is central to the format. A vector graphic is described using geometry
+          and drawing instructions rather than a fixed collection of pixels. When the graphic is rendered at
+          another size, the rendering engine can calculate the shapes again for that size.
+        </p>
+        <p>
+          This is particularly useful when one design has to work across different screens. A logo might appear
+          at 40 pixels wide in a navigation bar and much larger in a presentation, while the same SVG source
+          can be reused.
+        </p>
+
+        <div class="callout">
+          <strong>Important:</strong> SVG scalability does not mean every SVG is automatically tiny or simple.
+          Complex illustrations, filters, embedded images and large numbers of paths can still create large or
+          demanding files. Good SVG optimization still matters.
+        </div>
+      </section>
+
+      <section id="uses">
+        <h2>Where Is SVG Used?</h2>
+        <p>
+          SVG is especially useful when the image needs to remain sharp at different sizes or needs to integrate
+          with a web page. Common examples include:
+        </p>
+        <ul>
+          <li>Website logos and brand marks</li>
+          <li>Interface icons and simple UI graphics</li>
+          <li>Charts, diagrams and technical illustrations</li>
+          <li>Responsive illustrations</li>
+          <li>Decorative web graphics</li>
+          <li>Cricut and other cutting-machine artwork when prepared correctly</li>
+          <li>Vector artwork for design and print workflows</li>
+        </ul>
+        <p>
+          SVG is also valuable on the web because it can be used as an image, embedded directly into HTML,
+          referenced from CSS, or manipulated through the DOM and JavaScript in appropriate workflows.
+        </p>
+      </section>
+
+      <section id="advantages">
+        <h2>Main Advantages of SVG</h2>
+
+        <h3>1. It scales cleanly</h3>
+        <p>
+          Vector geometry can be rendered at different sizes without the pixelation associated with enlarging
+          a fixed-resolution raster image.
+        </p>
+
+        <h3>2. It can be edited</h3>
+        <p>
+          SVG artwork can be edited in vector design applications. Because the format is text-based markup,
+          developers can also inspect and modify SVG source when they understand the structure.
+        </p>
+
+        <h3>3. It works well with the web</h3>
+        <p>
+          Browsers support SVG directly, and SVG can interact with HTML, CSS and JavaScript. This makes it useful
+          for responsive interfaces and interactive graphics.
+        </p>
+
+        <h3>4. It can be searchable and scriptable</h3>
+        <p>
+          Since ordinary SVG files are text-based, their markup can be searched, indexed and processed by software.
+          This opens possibilities that are not available in the same way with a simple pixel-only image.
+        </p>
+
+        <h3>5. It supports more than basic shapes</h3>
+        <p>
+          SVG includes paths, gradients, clipping, masking, filters, text and other features, allowing designs
+          to become much more sophisticated than a few simple geometric shapes.
+        </p>
+      </section>
+
+      <section id="limitations">
+        <h2>SVG Limitations and Things to Watch</h2>
+        <p>
+          SVG is not the best format for every image. Photographs are usually better represented by raster formats
+          such as JPEG or modern web image formats. SVG can technically contain raster images, but that does not
+          turn a photograph into vector artwork.
+        </p>
+        <p>
+          Another issue is complexity. An SVG containing thousands of unnecessary paths, filters or embedded
+          assets may be harder to edit and can be larger than expected. Cleaning unused metadata and simplifying
+          paths can improve an SVG when appropriate.
+        </p>
+        <p>
+          Finally, SVG files used on websites should be handled carefully, especially when they come from
+          untrusted sources. An SVG is more than a flat bitmap; depending on how it is embedded and what it
+          contains, it can include additional features such as scripts.
+        </p>
+      </section>
+
+      <section id="svg-vs-raster">
+        <h2>SVG vs PNG and JPG</h2>
+        <table>
+          <thead>
+            <tr><th>Feature</th><th>SVG</th><th>PNG</th><th>JPG</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Basic model</td><td>Vector instructions</td><td>Raster pixels</td><td>Raster pixels</td></tr>
+            <tr><td>Scales cleanly</td><td>Yes, for vector artwork</td><td>No, limited by source resolution</td><td>No, limited by source resolution</td></tr>
+            <tr><td>Best suited to</td><td>Logos, icons, diagrams, illustrations</td><td>Transparency, screenshots, graphics</td><td>Photographs and complex images</td></tr>
+            <tr><td>Text/source editable</td><td>Yes</td><td>No, not as vector objects</td><td>No, not as vector objects</td></tr>
+            <tr><td>Browser support</td><td>Widely supported</td><td>Widely supported</td><td>Widely supported</td></tr>
+          </tbody>
+        </table>
+
+        <p>
+          For a deeper comparison, see our guide to
+          <a href="/blog/png-vs-jpg-vs-svg/">PNG vs JPG vs SVG</a>.
+          If you need a broader explanation of raster and vector graphics, read
+          <a href="/blog/what-is-a-vector-image/">What Is a Vector Image?</a>.
+        </p>
+      </section>
+
+      <section id="create-edit">
+        <h2>How to Create or Edit an SVG</h2>
+        <p>
+          There are several ways to create SVG artwork. You can draw vector shapes in a vector graphics editor,
+          export vector artwork from compatible design software, or write SVG markup directly when the graphic
+          is simple or programmatically generated.
+        </p>
+        <p>
+          When editing an existing SVG, check the paths, dimensions, viewBox, fills, strokes, text and any
+          embedded or linked assets. For web use, also check that the final file is not carrying unnecessary
+          metadata or excessive complexity.
+        </p>
+
+        <div class="cta">
+          <h3>Need to convert an image into a vector format?</h3>
+          <p>
+            VectorForge can help you turn suitable raster artwork into a vector-oriented workflow. Start with
+            the image and review the resulting paths before using the artwork for production.
+          </p>
+          <a class="btn" href="https://vectorforge-umber.vercel.app/png-to-eps/">Try VectorForge Tools</a>
+        </div>
+      </section>
+
+      <section id="conversion">
+        <h2>Converting Images to SVG: What You Should Know</h2>
+        <p>
+          Converting a JPG or PNG to SVG is not simply a matter of changing the file extension. A true
+          raster-to-vector workflow analyzes the image and creates vector paths or other vector elements that
+          approximate the original artwork.
+        </p>
+        <p>
+          Simple logos, icons and flat-color graphics are often easier to trace than photographs with complex
+          lighting and texture. After conversion, inspect the paths and remove unwanted shapes or artifacts
+          before using the result professionally.
+        </p>
+        <p>
+          For a step-by-step introduction, see:
+        </p>
+        <ul>
+          <li><a href="/blog/how-to-convert-jpg-to-svg/">How to Convert JPG to SVG Online for Free</a></li>
+          <li><a href="/blog/png-to-svg/">How to Convert PNG to SVG Online</a></li>
+          <li><a href="/blog/reduce-svg-file-size/">How to Reduce SVG File Size Without Losing Quality</a></li>
+          <li><a href="/blog/svg-vs-eps/">SVG vs EPS: What’s the Difference?</a></li>
+        </ul>
+      </section>
+
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+          <h3>What is an SVG file?</h3>
+          <p>
+            An SVG file is a Scalable Vector Graphics file. It uses XML-based markup to describe two-dimensional
+            graphics with shapes, paths, text and visual properties.
+          </p>
+        </div>
+
+        <div class="faq">
+          <h3>Why does SVG stay sharp when enlarged?</h3>
+          <p>
+            SVG describes vector geometry and drawing instructions instead of storing the artwork as a fixed
+            pixel grid, allowing the browser or other renderer to calculate the graphic at different sizes.
+          </p>
+        </div>
+
+        <div class="faq">
+          <h3>Can I edit an SVG file?</h3>
+          <p>
+            Yes. SVG can be edited in vector design software, and its text-based markup can also be inspected
+            or edited directly when appropriate.
+          </p>
+        </div>
+
+        <div class="faq">
+          <h3>Can an SVG contain a photo?</h3>
+          <p>
+            Yes. SVG supports an <code>&lt;image&gt;</code> element that can place a raster image inside an SVG
+            document. The embedded photo itself remains raster content.
+          </p>
+        </div>
+
+        <div class="faq">
+          <h3>Is SVG better than PNG?</h3>
+          <p>
+            Neither format is universally better. SVG is particularly useful for scalable vector artwork such as
+            logos, icons and diagrams, while PNG is useful for raster graphics and images where pixel-level detail
+            or transparency is needed.
+          </p>
+        </div>
+
+        <div class="faq">
+          <h3>Can SVG be used on websites?</h3>
+          <p>
+            Yes. SVG can be used as an image and can also be embedded directly in HTML or used through other web
+            mechanisms. Its responsive scaling makes it useful for many web graphics.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Final Takeaway</h2>
+        <p>
+          An SVG file is best understood as a description of a graphic rather than a simple collection of pixels.
+          It uses vector shapes, paths, text and other instructions that a renderer turns into the visible image.
+          That is why the same SVG can often serve different display sizes while remaining crisp.
+        </p>
+        <p>
+          For logos, icons, diagrams and many illustrations, SVG can be an excellent format. The key is to use
+          it for artwork that benefits from vector geometry, keep the file reasonably optimized, and check the
+          final SVG for unnecessary complexity before publishing or sending it to a client.
+        </p>
+      </section>
+
+      <section class="sources">
+        <h2>Further Reading</h2>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG" rel="noopener noreferrer">MDN: SVG — Scalable Vector Graphics</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Getting_started" rel="noopener noreferrer">MDN: Getting Started with SVG</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types" rel="noopener noreferrer">MDN: Image file type and format guide</a></li>
+          <li><a href="https://www.w3.org/TR/SVG11/" rel="noopener noreferrer">W3C: Scalable Vector Graphics Specification</a></li>
+        </ul>
+        <p class="note">External references are provided for technical background. SVG behavior can depend on the browser, embedding method and the contents of a particular SVG file.</p>
+      </section>
+    </article>
+
+    <aside>
+      <div class="side-card">
+        <h3>Related VectorForge Guides</h3>
+        <div class="related">
+          <a href="/blog/how-to-convert-jpg-to-svg/">JPG to SVG Guide</a>
+          <a href="/blog/png-to-svg/">PNG to SVG Guide</a>
+          <a href="/blog/what-is-a-vector-image/">What Is a Vector Image?</a>
+          <a href="/blog/svg-vs-eps/">SVG vs EPS</a>
+          <a href="/blog/reduce-svg-file-size/">Reduce SVG File Size</a>
+          <a href="/blog/png-vs-jpg-vs-svg/">PNG vs JPG vs SVG</a>
+        </div>
+      </div>
+
+      <div class="side-card" style="margin-top:18px">
+        <h3>VectorForge</h3>
+        <p>Explore practical guides for image conversion, vector graphics, SVG, EPS and web-ready artwork.</p>
+        <a class="btn" href="https://vectorforge-umber.vercel.app/">Explore VectorForge</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Vector<span>Forge</span></div>
+    <p>Vector graphics guides, conversion tools and practical resources.</p>
+  </div>
+</footer>
+</body>
+</html>
